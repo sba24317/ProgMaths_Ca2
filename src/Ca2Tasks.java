@@ -23,7 +23,7 @@ public class Ca2Tasks {
      * Return: void
      */
     public void task01(int paramArrSize) {
-        System.out.println("Question 01 Begin");
+        System.out.println("task 01 Begin");
         System.out.println("---------------------------------------------------------------------");
 
         int i, j;
@@ -58,10 +58,10 @@ public class Ca2Tasks {
             System.out.println(msgResult);
 
             System.out.println("---------------------------------------------------------------------");
-            System.out.println("Question 01 End");
+            System.out.println("task 01 End");
 
         } catch (Exception e) {
-            System.out.println("Error in method question_01, error is \n" + e.getMessage());
+            System.out.println("Error in method task_01, error is \n" + e.getMessage());
         }
     }
 
@@ -83,7 +83,7 @@ public class Ca2Tasks {
      * Return: void
      */
     public void task02(int paramSize) {
-        System.out.println("Question 02 Begin");
+        System.out.println("task 02 Begin");
         System.out.println("---------------------------------------------------------------------");
 
         int size;
@@ -109,10 +109,10 @@ public class Ca2Tasks {
             this.printMatrix("Array result multiplication: ", arrayResult);
 
             System.out.println("---------------------------------------------------------------------");
-            System.out.println("Question 02 End");
+            System.out.println("task 02 End");
 
         } catch (Exception e) {
-            System.out.println("Error in method question_02, error is \n" + e.getMessage() + " " + e.getMessage());
+            System.out.println("Error in method task_02, error is \n" + e.getMessage() + " " + e.getMessage());
         }
     }
 
@@ -132,7 +132,7 @@ public class Ca2Tasks {
      * Return: void
      */
     public void task03(int paramArrSize) {
-        System.out.println("Question 03 Begin");
+        System.out.println("task 03 Begin");
         System.out.println("---------------------------------------------------------------------");
 
         int arraySize;
@@ -167,10 +167,10 @@ public class Ca2Tasks {
             System.out.println("Sum of elements, diagonal secondary: " + secondaryDiagonal);
 
             System.out.println("---------------------------------------------------------------------");
-            System.out.println("Question 03 End");
+            System.out.println("task 03 End");
 
         } catch (Exception e) {
-            System.out.println("Error in method question_03, error is \n" + e.getMessage() + " " + e.getStackTrace());
+            System.out.println("Error in method task_03, error is \n" + e.getMessage() + " " + e.getStackTrace());
         }
     }
 
@@ -188,7 +188,7 @@ public class Ca2Tasks {
      * elements of the matrix as input and then display the spiral traversal.
      */
     public void task04(int paramRow, int paramCol) {
-        System.out.println("Question 04 Begin");
+        System.out.println("task 04 Begin");
         System.out.println("---------------------------------------------------------------------");
 
         int i;
@@ -267,10 +267,10 @@ public class Ca2Tasks {
             System.out.println(msg);
 
             System.out.println("---------------------------------------------------------------------");
-            System.out.println("Question 04 End");
+            System.out.println("task 04 End");
 
         } catch (Exception e) {
-            System.out.println("Error in method question_04, error is \n" + e.getMessage() + " " + e.getStackTrace());
+            System.out.println("Error in method task_04, error is \n" + e.getMessage() + " " + e.getStackTrace());
         }
     }
 
@@ -293,7 +293,7 @@ public class Ca2Tasks {
      * process.
      */
     public void task05(int paramSize) {
-        System.out.println("Question 05 Begin");
+        System.out.println("task 05 Begin");
         System.out.println("---------------------------------------------------------------------");
 
         int i;
@@ -336,10 +336,10 @@ public class Ca2Tasks {
             }
             System.out.println("Performed " + iterations + " iterations and " + swaps + " swaps.");
         } catch (Exception e) {
-            System.out.println("Error in method question_05, error is \n" + e.getMessage() + " " + e.getStackTrace());
+            System.out.println("Error in method task_05, error is \n" + e.getMessage() + " " + e.getStackTrace());
         }
         System.out.println("---------------------------------------------------------------------");
-        System.out.println("Question 05 End");
+        System.out.println("task 05 End");
     }
 
     /*
