@@ -1,8 +1,9 @@
-
-import java.util.Scanner;
-
 public class Ca2Tasks {
-    Scanner scanner = new Scanner(System.in);
+    InputData scanner;
+    
+    Ca2Tasks(){
+        scanner = new InputData();
+    }
 
     /*
      * This method is used when user intends to call the method
@@ -25,6 +26,7 @@ public class Ca2Tasks {
     public void task01(int paramArrSize) {
         System.out.println("task 01 Begin");
         System.out.println("---------------------------------------------------------------------");
+        System.out.println("In this method you will input a size and elements for an array, and then the program will calculate either it has a repeat element or not. ");
 
         int i, j;
         int arraySize;
@@ -36,7 +38,7 @@ public class Ca2Tasks {
             if (paramArrSize > 0)
                 arraySize = paramArrSize;
             else
-                arraySize = getNextInt("Inform the size of the array: ");
+                arraySize = scanner.getNextInt("Inform the size of the array: ");
 
             if (arraySize <= 0)
                 throw new Exception("Array size must have at least one element.");
@@ -44,7 +46,7 @@ public class Ca2Tasks {
             // get elementso for the array
             myArray = getArrayElements((paramArrSize >= 0), arraySize);
 
-            for (i = 0; i < arraySize-1; i++)
+            for (i = 0; i < arraySize - 1; i++)
                 // look for repeated elements
                 for (j = i + 1; j < arraySize; j++)
                     if (myArray[i] == myArray[j]) {
@@ -85,13 +87,14 @@ public class Ca2Tasks {
     public void task02(int paramSize) {
         System.out.println("task 02 Begin");
         System.out.println("---------------------------------------------------------------------");
+        System.out.println("In this method you will input a size of the matrix, and then the program will calculate a multiplication table for it. ");
 
         int size;
         double arrayResult[][];
 
         try {
             // check if user sent a array size otherwize ask user to input it
-            size = (paramSize > 0) ? paramSize : getNextInt("Informe the row size of the array: ");
+            size = (paramSize > 0) ? paramSize : scanner.getNextInt("Informe the row size of the array: ");
 
             if (size <= 0)
                 throw new Exception("Array size must be bigger than 0 ");
@@ -134,6 +137,7 @@ public class Ca2Tasks {
     public void task03(int paramArrSize) {
         System.out.println("task 03 Begin");
         System.out.println("---------------------------------------------------------------------");
+        System.out.println("In this method you will input a size and elements for a matrix, and then the program will calculate sum of elements of main diagonal and sum of elements of secondary diagoanl. ");
 
         int arraySize;
         double myMatrix[][];
@@ -145,7 +149,7 @@ public class Ca2Tasks {
             if (paramArrSize > 0)
                 arraySize = paramArrSize;
             else
-                arraySize = getNextInt("Inform the size oh the array");
+                arraySize = scanner.getNextInt("Inform the size oh the array: ");
 
             if (arraySize <= 0)
                 throw new Exception("Array size must have at least one.");
@@ -190,6 +194,7 @@ public class Ca2Tasks {
     public void task04(int paramRow, int paramCol) {
         System.out.println("task 04 Begin");
         System.out.println("---------------------------------------------------------------------");
+        System.out.println("In this method you will input a row and col size for one matrix and elements for it and then the program will show all elements for the spiral tranversal. ");
 
         int i;
         int rows;
@@ -208,8 +213,8 @@ public class Ca2Tasks {
                 cols = paramCol;
             } else {
                 // resolving array dimentions manualy
-                rows = getNextInt("Inform number of rows: ");
-                cols = getNextInt("Inform number of cols: ");
+                rows = scanner.getNextInt("Inform number of rows: ");
+                cols = scanner.getNextInt("Inform number of cols: ");
             }
 
             // validate dimentionss
@@ -229,15 +234,13 @@ public class Ca2Tasks {
                 // get all elements from leftEdge to rightEdge
                 for (i = leftEdge; i <= rightEdge; i++)
                     msg += myMatrix[upEdge][i] + ", ";
-            
-                msg += "\n";
+
                 upEdge++;
 
                 // get all elements from upEdge to downEdge
                 for (i = upEdge; i <= downEdge; i++)
                     msg += myMatrix[i][rightEdge] + ", ";
-            
-                msg += "\n";
+
                 rightEdge--;
 
                 // get all elements from rightEdge to leftEdge
@@ -245,7 +248,6 @@ public class Ca2Tasks {
                     for (i = rightEdge; i >= leftEdge; i--) {
                         msg += myMatrix[downEdge][i] + ", ";
                     }
-                    msg += "\n";
                     downEdge--;
                 }
 
@@ -253,8 +255,7 @@ public class Ca2Tasks {
                 if (leftEdge <= rightEdge) {
                     for (i = downEdge; i >= upEdge; i--)
                         msg += myMatrix[i][leftEdge] + ", ";
-                
-                    msg += "\n";
+
                     leftEdge++;
                 }
             }
@@ -295,6 +296,7 @@ public class Ca2Tasks {
     public void task05(int paramSize) {
         System.out.println("task 05 Begin");
         System.out.println("---------------------------------------------------------------------");
+        System.out.println("In this method you will input a size and elements for an array, and then the program will sort it, and show how many steps and swaps were needed.");
 
         int i;
         int size;
@@ -309,7 +311,7 @@ public class Ca2Tasks {
             if (paramSize > 0) {
                 size = paramSize;
             } else {
-                size = getNextInt("Inform the size array: ");
+                size = scanner.getNextInt("Inform the size array: ");
             }
 
             // validaing array size
@@ -340,22 +342,6 @@ public class Ca2Tasks {
         }
         System.out.println("---------------------------------------------------------------------");
         System.out.println("task 05 End");
-    }
-
-    /*
-     * This private method prompts to The user input a new double value.
-     */
-    private double getNextDouble(String msg) throws Exception {
-        System.out.print(msg);
-        return scanner.nextDouble();
-    }
-
-    /*
-     * This private method prompts to The user input a new int value.
-     */
-    private int getNextInt(String msg) throws Exception {
-        System.out.print(msg);
-        return scanner.nextInt();
     }
 
     /*
@@ -416,9 +402,8 @@ public class Ca2Tasks {
                 }
                 // gather elements for the array manually
             } else {
-                for (int i = 0; i < size; i++) {
-                    myArray[i] = getNextDouble("Inform array index " + i + " :");
-                }
+                for (int i = 0; i < size; i++)
+                    myArray[i] = scanner.getNextDouble("Inform array index " + i + " : ");
             }
         } catch (Exception e) {
             System.out.println(
@@ -448,7 +433,7 @@ public class Ca2Tasks {
             } else {
                 for (i = 0; i < row; i++)
                     for (j = 0; j < col; j++)
-                        myMatrix[i][j] = getNextDouble("Inform element index " + (i) + "," + (j) + " : ");
+                        myMatrix[i][j] = scanner.getNextDouble("Inform element index " + (i) + "," + (j) + " : ");
             }
         } catch (Exception e) {
             System.out.println(
