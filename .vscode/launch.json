@@ -1,0 +1,27 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Ca2Main",
+            "request": "launch",
+            "mainClass": "Ca2Main",
+            "projectName": "004_CA02_98e204b6"
+        },
+        {
+            "type": "java",
+            "name": "Ca1",
+            "request": "launch",
+            "mainClass": "Ca1",
+            "projectName": "002_CA1_702d2bfb"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}",
+            "args": [
+                "1,2;4,5"
+            ]
+        }
+    ]
+}
