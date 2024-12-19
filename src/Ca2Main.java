@@ -1,23 +1,28 @@
+/*
+ *  Main class for CA2 Programath project
+ *  remote repository is https://github.com/sba24317/ProgMaths_Ca2
+ * 
+ */
 public class Ca2Main {
 
     public static void main(String[] args) {
         System.out.println("\r\n");
         
-        Ca2Questions questions = new Ca2Questions();
+        Ca2Tasks ca2Tasks = new Ca2Tasks();
         
         // look for repeated elements
-        questions.task01();
+        ca2Tasks.task01();
         
         // matrix multiplication
-        questions.task02();
+        ca2Tasks.task02();
 
-        // calculate diagonal principal and secondary of one matrix
-        questions.task03();
+        // diagonal principal and secondary
+        ca2Tasks.task03();
 
         // spiral traversal
-        questions.task04();
+        ca2Tasks.task04();
         
         // bubblesort
-        questions.task05();
+        ca2Tasks.task05();
     }
 }
